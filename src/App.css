@@ -1,0 +1,210 @@
+/* Cedar Park Barbershop - React JS Animated Stylesheet */
+:root {
+  --copper: #c59b27;
+  --copper-hover: #b0871e;
+  --dark-navy: #0b132b;
+  --surface-navy: #1c2541;
+  --light-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-dark: #0b132b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --radius: 12px;
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text-dark);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+}
+
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.max-w-700 { max-width: 740px; }
+.text-center { text-align: center; }
+.text-white { color: #ffffff !important; }
+.text-copper { color: var(--copper) !important; }
+.bg-dark { background-color: var(--dark-navy); }
+.bg-light { background-color: var(--light-bg); }
+.mt-2 { margin-top: 0.75rem; }
+
+.app-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* Top Strip */
+.top-strip {
+  background-color: var(--dark-navy);
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.strip-flex { display: flex; justify-content: space-between; align-items: center; }
+.strip-phone { color: #5bc0be; font-weight: 700; }
+
+.strip-book-btn {
+  background-color: var(--copper);
+  color: #000;
+  padding: 0.3rem 0.85rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-left: 0.75rem;
+  transition: var(--transition);
+}
+
+.strip-book-btn:hover { background-color: var(--copper-hover); color: #fff; }
+
+/* Header */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-flex { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+.logo { display: flex; align-items: center; gap: 0.75rem; }
+.logo-icon { font-size: 2.2rem; }
+
+.main-brand { font-family: 'Cinzel Decorative', serif; font-size: 1.35rem; font-weight: 800; color: var(--dark-navy); }
+.sub-brand { font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; color: var(--copper); }
+
+.nav-menu { display: flex; gap: 1.75rem; }
+.nav-menu a { font-weight: 600; font-size: 0.95rem; color: var(--text-dark); }
+.nav-menu a:hover { color: var(--copper); }
+
+.mobile-toggle { display: none; background: none; border: none; font-size: 1.75rem; cursor: pointer; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.btn-copper {
+  background: linear-gradient(135deg, var(--copper) 0%, var(--copper-hover) 100%);
+  color: #000;
+  box-shadow: 0 4px 15px rgba(197, 155, 39, 0.3);
+}
+
+.btn-copper:hover { transform: translateY(-2px); color: #fff; box-shadow: 0 8px 25px rgba(197, 155, 39, 0.45); }
+
+.btn-outline { background: transparent; border-color: #ffffff; color: #ffffff; }
+.btn-outline:hover { background-color: #ffffff; color: var(--dark-navy); transform: translateY(-2px); }
+
+.btn-lg { padding: 1rem 2.2rem; font-size: 1.05rem; }
+.btn-block { display: block; width: 100%; }
+
+/* Hero */
+.hero {
+  position: relative;
+  background: linear-gradient(rgba(11, 19, 43, 0.82), rgba(11, 19, 43, 0.88)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #ffffff;
+  padding: 7rem 0;
+  text-align: center;
+}
+
+.hero h1 { font-size: 3rem; color: #ffffff; margin-bottom: 1.25rem; }
+.hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 750px; margin: 0 auto 2.25rem; }
+
+.hero-actions { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 3.5rem; }
+
+/* Services Grid */
+.section { padding: 6rem 0; }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.section-header p { color: var(--text-muted); font-size: 1.1rem; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: var(--card-bg);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.service-card:hover { transform: translateY(-8px); border-color: var(--copper); box-shadow: var(--shadow-lg); }
+.service-card .icon { font-size: 2.75rem; margin-bottom: 1.25rem; }
+.service-card h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+.service-card .price { font-weight: 700; color: var(--copper); font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+/* Booking Form */
+.booking-card {
+  background-color: var(--card-bg);
+  padding: 2.75rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+}
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.form-group { margin-bottom: 1.25rem; }
+.form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.footer { padding: 5rem 0 0; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3.5rem; padding-bottom: 3.5rem; }
+.footer-info h3, .footer-cta h4 { color: #ffffff; font-size: 1.9rem; margin-bottom: 0.85rem; }
+.contact-line { margin-bottom: 0.5rem; color: #cbd5e1; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 1.75rem 0; font-size: 0.88rem; color: #64748b; }
+
+/* React Toast Banner */
+.toast-banner {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 2000;
+  background-color: var(--dark-navy);
+  color: #fff;
+  padding: 1.1rem 1.6rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border-left: 6px solid var(--copper);
+  font-weight: 600;
+  max-width: 420px;
+}
+
+@media (max-width: 992px) { .footer-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.4rem; } }
+@media (max-width: 768px) {
+  .nav-menu { display: none; position: absolute; top: 80px; left: 0; width: 100%; background-color: #ffffff; flex-direction: column; padding: 1.75rem; }
+  .nav-menu.active { display: flex; }
+  .mobile-toggle { display: block; }
+  .form-grid { grid-template-columns: 1fr; }
+}
